@@ -1,10 +1,13 @@
 package com.match.engine.OrderEngine.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,5 +45,15 @@ public class OrderController {
 		return ResponseEntity.ok().body(orderDTO);
 		
 	}
+	
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<OrderDTO> updateOrder(@PathVariable UUID id, 
+			@RequestBody OrderRequestDTO orderRequestDTO){
+		OrderDTO orderDTO = orderService.updateOrder(id, orderRequestDTO);
+		return ResponseEntity.ok().body(orderDTO);
+		
+	}
+}
 
 }
