@@ -1,6 +1,7 @@
 package com.match.engine.OrderEngine.domain.dto;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class OrderDTO {
 
@@ -10,7 +11,7 @@ public class OrderDTO {
 	  private Double Price;
 	  private int Quantity;
 	  private Long globalOrderId;
-	  private Long orderId;
+	  private UUID orderId;
 	  private LocalDate orderTimeStamp;
 	  
 	  
@@ -51,11 +52,11 @@ public class OrderDTO {
 	  public void setGlobalOrderId(Long globalOrderId) {
 		  this.globalOrderId = globalOrderId;
 	  }
-	  public Long getOrderId() {
+	  public UUID getOrderId() {
 		  return orderId;
 	  }
-	  public void setOrderId(Long orderId) {
-		  this.orderId = orderId;
+	  public void setOrderId(UUID uuid) {
+		  this.orderId = uuid;
 	  }
 	  public LocalDate getOrderTimeStamp() {
 		  return orderTimeStamp;
